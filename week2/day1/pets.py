@@ -1,3 +1,5 @@
+# called "pet.py" on Canvas 
+
 class Pet:
     def __init__(self, name, fullness=50, happiness=50, hunger=5, mopiness=5):
         self.name = name
@@ -5,6 +7,7 @@ class Pet:
         self.happiness = happiness
         self.hunger = hunger
         self.mopiness = mopiness
+        self.toys = []
 
     def eat_food(self):
         self.fullness += 30
@@ -15,6 +18,18 @@ class Pet:
     def be_alive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
+        for toy in self.toys:
+            self.happiness += toy.use()
+    
+    def get_toy(self, toy):
+        self.toys.append(toy)
+
+    def __str__(self):
+        return """
+        %s:
+        Fullness: %d
+        Happiness: %d
+        """ % (self.name, self.fullness, self.happiness)   
 
         
 class CuddlyPet(Pet):
@@ -25,6 +40,8 @@ class CuddlyPet(Pet):
     def be_alive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness/2
+        for toy in self.toys:
+            self.happiness += toy.use()
         
     def cuddle(self, other_pet):
         # Super cuddle powers, activate!
