@@ -1,7 +1,6 @@
 # copied the main menu from Canvas specifications 
 mainMenu = "\nElectronic Phone Book \n ===================== \n1. Look up an entry\n2. Set an entry\n3. Delete an entry\n4. List all entries\n5. Quit \n \nWhat do you want to do (1-5)?"
 
-
 # start with no content in the phone book, then fill it up with objects representing entries 
 phoneBook = []
 
@@ -36,7 +35,7 @@ def main():
             deleteName = input('Name:')
             for entry in phoneBook:
                 if entry.name == deleteName:
-                    del entry ## need to find out how to delete this from the phoneBook variable. Right now this just deletes the variable in the for loop.
+                    phoneBook.remove(entry) 
             print(f'Deleted entry for {deleteName}\n')
 
 # 4. If they choose to list all entries, you will go through all entries in the dictionary and print each out to the terminal.
