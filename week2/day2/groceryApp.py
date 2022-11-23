@@ -21,20 +21,27 @@ def main():
         # Main menu input: 
         mainMenuInput = input(mainMenu) 
 
-        # Option 1; add a new grocery store location
+        # Option 1: add a new grocery store location
         if mainMenuInput == 1:
 
             # add location 
         
-        # Option 2; add stuff to a particular grocery list 
-        if mainMenuInput == 2:
+        # Option 2: add stuff to a particular grocery list 
+        elif mainMenuInput == 2:
         
+        # Option 3: View all grocery store locations 
 
+        # Option 4: All items for a single store 
+
+        # Option 5: All items from all stores 
 
         # Option 9; close the application 
-        if mainMenuInput == 9:
+        elif mainMenuInput == 9:
             print('Happy shopping!')
             openList = False
+        
+        else:
+            
 
 
 main()

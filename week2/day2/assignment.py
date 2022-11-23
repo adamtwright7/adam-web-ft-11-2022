@@ -107,6 +107,3 @@ brennanCar = Cars('Telsa','Model S',2020,'electric')
     #7c Use the above method (7b) on the second car
 
 dadamCar.seeCar()
-
-#Push this all to a repo on your github
-#Paste github link of assignment page to: https://digitalcrafts.instructure.com/courses/225/assignments/9345
