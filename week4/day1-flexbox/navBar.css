@@ -1,0 +1,17 @@
+nav{
+    display: flex;
+    background-color: lightskyblue;
+}
+
+.nav-bar-item {
+    text-emphasis-color: white;
+}
+
+.nav-bar-item:first-child{
+    flex-grow: 6;
+}
+
+.nav-bar-menu {
+    display: flex;
+    flex-grow: 4;
+}

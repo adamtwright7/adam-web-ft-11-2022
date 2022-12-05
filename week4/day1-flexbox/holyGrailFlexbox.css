@@ -7,25 +7,25 @@ header,footer {
     background-color: lightskyblue;
 }
 
-.middleBox {
-    display: flex;
-}
-
 .content {
     background-color: lightcoral;
-    flex: 1;
-    width: 60%
+    flex-grow: 6;
 }
 
 .menu {
     background-color: plum;
-    width: 20%;
-    flex: 1;
+    flex-grow: 2;
 }
 
 
 .ads {
     background-color: plum;
-    width: 20%;
-    flex: 1;
+    flex-grow: 2;
+}
+
+/* Makes this all one column for screens with width >= 600px */
+@media (width >= 600px) {
+    .middleBox {
+        display: flex;
+    }
 }
