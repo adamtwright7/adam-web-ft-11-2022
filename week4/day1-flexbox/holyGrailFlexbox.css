@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,footer {
+    background-color: lightskyblue;
+}
+
+.middleBox {
+    display: flex;
+}
+
+.content {
+    background-color: lightcoral;
+    flex: 1;
+    width: 60%
+}
+
+.menu {
+    background-color: plum;
+    width: 20%;
+    flex: 1;
+}
+
+
+.ads {
+    background-color: plum;
+    width: 20%;
+    flex: 1;
+}
