@@ -9,8 +9,6 @@ body {
     font-family: 'Bebas Neue' sans-serif;
 }
 
-
-
 /* Making the buttons the right color. 
 For some reason :last-child works on the second one but :first-child doesn't on the first one.*/
 
@@ -23,14 +21,25 @@ button:last-of-type {
     border: 2px solid white;
 }
 
+/* Making the images the right size */
+
 img {
     height: 300px;
     width: 400px;
 }
 
+/* Making all the rows of images flexboxes and giving them margins.*/
+
 .row {
     display: flex;
     gap: 10px;
+    margin-bottom: 100px;
+}
+
+/* Putting space between the movies description and the pictures/rows. */
+
+nav~p{
+    margin-bottom: 50px;
 }
 
 /* Setting up the nav bar */
@@ -41,9 +50,23 @@ nav{
     padding: 5px;
     align-items: center;
     justify-content: space-between;
+    height: auto;
 }
 
-img:first-of-type{
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Making the logo the right-ish size. */
+
+nav img{
     height: 8%;
     width: 8%;
+}
+
+img:hover{
+    transform: scale(1.1);
+    transition: transform .3s;
 }
