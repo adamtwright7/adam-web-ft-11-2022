@@ -1,0 +1,49 @@
+/* Applying the dark mode color */
+body {
+    background-color: #141414;
+}
+
+/* Turning all text white and the proper font */
+* {
+    color: white;
+    font-family: 'Bebas Neue' sans-serif;
+}
+
+
+
+/* Making the buttons the right color. 
+For some reason :last-child works on the second one but :first-child doesn't on the first one.*/
+
+button:first-of-type {
+    background-color: #E50914;
+}
+
+button:last-of-type {
+    background-color: black;
+    border: 2px solid white;
+}
+
+img {
+    height: 300px;
+    width: 400px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Setting up the nav bar */
+
+nav{
+    display: flex;
+    background-color: black;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img:first-of-type{
+    height: 8%;
+    width: 8%;
+}
