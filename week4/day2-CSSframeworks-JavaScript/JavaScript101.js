@@ -161,6 +161,7 @@ const longLongVowel = (inputStr) => {
 // console.log(longLongVowel('Naan')) //testcases
 // console.log(longLongVowel('Cheese'))
 // console.log(longLongVowel('Aaron'))
+// console.log(longLongVowel('Test Case: Adam'))
 
 // Write a function positiveNumbers which is given an array of numbers and returns a new array containing only the positive numbers within the given array.
 
