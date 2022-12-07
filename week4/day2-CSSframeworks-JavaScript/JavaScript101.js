@@ -172,7 +172,7 @@ const positiveNumbers = (numbers) => {
 
 // Write a function cipher which is given a string, an offset, and returns the Caesar cipher of the string.
 
-const cipher = (inputString, shift) => {
+const cipher = (inputString,shift) => {
     // First I'll put the input string in Unicode, then apply the offset, then shift it back to plaintext. 
     // Putting the string in Unicode:
     let currentUnicode = 0;
@@ -184,7 +184,7 @@ const cipher = (inputString, shift) => {
             currentUnicode = ((currentUnicode - 65)+shift)%26 + 65 // handles wrapping
         } 
         else if (currentUnicode >= 97 && currentUnicode <= 122) { // for lowercase letters
-            currentUnicode = ((currentUnicode - 96)+shift)%26 + 96
+            currentUnicode = ((currentUnicode - 97)+shift)%26 + 97
         } // nothing is done to non-alphabetic characters 
         unicodeArray.push(currentUnicode) // stores all the unicode in a new array 
         i++
@@ -196,15 +196,24 @@ const cipher = (inputString, shift) => {
         outputString += String.fromCharCode(unicodeArray[i])
         i++
     }
+    // outputString.replace(/`/g,'z') // Handles the z issue for lowercase
+    // outputString.replace(/@/g,'Z') // Handles the z issue for uppercase
     return outputString
 }
 
-console.log(cipher('test',3)) // testcase
-console.log(cipher("abcdefghijklmnopqrstuvwxyz",4))
-console.log(cipher("I am just writing this test to decipher it and to test if xyz letts work",5))
+// console.log(cipher('test',3)) // testcases
+// console.log(cipher("abcdefghijklmnopqrstuvwxyz",4))
+// console.log(cipher("ABCDEFGHIJKLMNOPQRSTUVWXYZ",4))
+// console.log(cipher("I am just writing this test to decipher it and to test if xyz letts work",5))
+// console.log(cipher('Genius without education is like silver in the mine',13))
 
 // Write a function decipher which is given a string, an offset, and returns the original message.
-// This is basically just the same thing as above, but the offset is negative. 
+// This is basically just the same thing as above, but the offset is negative. Because we're going to have to deal with negative modulos, 
+// we need to define a new modulo function. 
+
+function modulo(num, mod) {
+    return ((num % mod) + mod) % mod;
+  }
 
 const decipher = (inputStr,offset) => {
     let currentUnicode = 0;
@@ -213,10 +222,10 @@ const decipher = (inputStr,offset) => {
     while (i < inputStr.length) {
         currentUnicode = inputStr.codePointAt(i) 
         if (currentUnicode >= 65 && currentUnicode <= 90) { 
-            currentUnicode = ((currentUnicode - 64)-offset)%26 + 64 
+            currentUnicode = modulo((currentUnicode - 65) - offset,26) + 65 
         } 
         else if (currentUnicode >= 97 && currentUnicode <= 122) { 
-            currentUnicode = ((currentUnicode - 96)-offset)%26 + 96
+            currentUnicode = modulo((currentUnicode - 97) - offset,26) + 97
         } 
         unicodeArray.push(currentUnicode) 
         i++
@@ -231,4 +240,8 @@ const decipher = (inputStr,offset) => {
     return outputString
 }
 
-// console.log(decipher()) //testcase 
+//testcases
+// console.log(decipher("abcdefghijklmnopqrstuvwxyz",4))
+// console.log(decipher("ABCDEFGHIJKLMNOPQRSTUVWXYZ",4))
+// console.log(decipher('N fr ozxy bwnynsl ymnx yjxy yt ijhnumjw ny fsi yt yjxy nk cde qjyyx btwp',5)) 
+// console.log(decipher('Travhf jvgubhg rqhpngvba vf yvxr fvyire va gur zvar',13))
